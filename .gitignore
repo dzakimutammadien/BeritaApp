@@ -35,6 +35,9 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
  HEAD
+ HEAD
+
+ 534b008 (Initial commit: setup BeritaApp with expo-router and base layout)
 # Node modules
 node_modules/
 .expo/
@@ -52,7 +55,10 @@ yarn-error.log*
 .vscode/
 .idea/
 
+ HEAD
 
 b94f8bd (Perbaiki README.md)
+
+ 534b008 (Initial commit: setup BeritaApp with expo-router and base layout)
 
 app-example

@@ -1,3 +1,4 @@
+ HEAD
 HEAD
 import { Stack } from 'expo-router';
 import { useFonts } from 'expo-font';
@@ -11,20 +12,22 @@ export default function RootLayout() {
 
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
+
+ 534b008 (Initial commit: setup BeritaApp with expo-router and base layout)
 import { Stack } from 'expo-router';
+import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
-import 'react-native-reanimated';
+import { StatusBar } from 'expo-status-bar';
 
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+ HEAD
   const colorScheme = useColorScheme();
 b94f8bd (Perbaiki README.md)
+
+ 534b008 (Initial commit: setup BeritaApp with expo-router and base layout)
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
@@ -41,6 +44,7 @@ b94f8bd (Perbaiki README.md)
 
   return (
  HEAD
+ HEAD
     <>
       <Stack />
       <StatusBar style="auto" />
@@ -54,5 +58,11 @@ b94f8bd (Perbaiki README.md)
       <StatusBar style="auto" />
     </ThemeProvider>
  b94f8bd (Perbaiki README.md)
+
+    <>
+      <Stack />
+      <StatusBar style="auto" />
+    </>
+ 534b008 (Initial commit: setup BeritaApp with expo-router and base layout)
   );
 }
