@@ -34,6 +34,7 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+ HEAD
 # Node modules
 node_modules/
 .expo/
@@ -51,5 +52,7 @@ yarn-error.log*
 .vscode/
 .idea/
 
+
+b94f8bd (Perbaiki README.md)
 
 app-example

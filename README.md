@@ -1,6 +1,12 @@
+ HEAD
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+
+# BeritaApp
+
+Ini adalah aplikasi Expo yang dibuat dengan [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+b94f8bd (Perbaiki README.md)
 
 ## Get started
 
@@ -9,6 +15,7 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    ```bash
    npm install
    ```
+ HEAD
 
 2. Start the app
 
@@ -48,3 +55,5 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+b94f8bd (Perbaiki README.md)
