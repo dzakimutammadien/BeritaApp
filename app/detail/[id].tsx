@@ -1,15 +1,17 @@
 import { useLocalSearchParams } from 'expo-router';
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 export default function DetailScreen() {
-  const { url, title } = useLocalSearchParams<{ url: string; title: string }>();
+  const { id, title } = useLocalSearchParams<{ id: string; title?: string }>();
 
-  if (!url) {
+  const decodedUrl = decodeURIComponent(id || '');
+
+  if (!decodedUrl || !decodedUrl.startsWith('http')) {
     return (
       <View style={styles.center}>
-        <Text style={styles.error}>URL berita tidak ditemukan.</Text>
+        <Text style={styles.error}>URL berita tidak ditemukan atau tidak valid.</Text>
       </View>
     );
   }
@@ -17,9 +19,11 @@ export default function DetailScreen() {
   return (
     <View style={{ flex: 1 }}>
       <View style={styles.header}>
-        <Text numberOfLines={1} style={styles.headerTitle}>{title || 'Detail Berita'}</Text>
+        <Text numberOfLines={1} style={styles.headerTitle}>
+          {title || 'Detail Berita'}
+        </Text>
       </View>
-      <WebView source={{ uri: url }} startInLoadingState />
+      <WebView source={{ uri: decodedUrl }} startInLoadingState />
     </View>
   );
 }
@@ -42,5 +46,7 @@ const styles = StyleSheet.create({
   error: {
     fontSize: 16,
     color: 'red',
+    textAlign: 'center',
+    padding: 20,
   },
 });

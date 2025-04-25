@@ -4,7 +4,7 @@ export default function AboutScreen() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Image
-        source={require("@/assets/logo.png")} // Pastikan kamu punya logo ini di folder assets/
+        source={require("@/assets/images/logo.png")}
         style={styles.logo}
         resizeMode="contain"
       />
@@ -18,7 +18,7 @@ export default function AboutScreen() {
 
       <Text style={styles.sectionTitle}>👨‍💻 Developer</Text>
       <Text style={styles.text}>
-        Dibuat oleh [Nama Kamu] untuk tugas mata kuliah Mobile Programming.
+        Dibuat oleh [Dzaki Illiyin] untuk tugas mata kuliah Mobile Programming.
       </Text>
 
       <Text style={styles.sectionTitle}>📚 Teknologi</Text>

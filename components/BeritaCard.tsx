@@ -12,11 +12,18 @@ interface Props {
 const BeritaCard: React.FC<Props> = ({ berita, onSave, isSaved = false }) => {
   const router = useRouter();
 
+  const handlePress = () => {
+    router.push({
+      pathname: '/detail/[id]',
+      params: {
+        id: encodeURIComponent(berita.url),
+        title: berita.title, // opsional, bisa dibaca di detail
+      },
+    });
+  };
+
   return (
-    <TouchableOpacity
-      style={styles.card}
-      onPress={() => router.push({ pathname: '/detail/[id]', params: { id: encodeURIComponent(berita.url) } })}
-    >
+    <TouchableOpacity style={styles.card} onPress={handlePress}>
       {berita.image && (
         <Image source={{ uri: berita.image }} style={styles.image} resizeMode="cover" />
       )}
@@ -24,7 +31,9 @@ const BeritaCard: React.FC<Props> = ({ berita, onSave, isSaved = false }) => {
         <Text style={styles.title} numberOfLines={2}>{berita.title}</Text>
         <Text style={styles.desc} numberOfLines={3}>{berita.description}</Text>
         <View style={styles.bottom}>
-          <Text style={styles.date}>{new Date(berita.published_at).toLocaleDateString()}</Text>
+          <Text style={styles.date}>
+            {new Date(berita.published_at).toLocaleDateString()}
+          </Text>
           {onSave && (
             <TouchableOpacity onPress={onSave}>
               <Text style={{ color: isSaved ? 'green' : '#007bff' }}>
